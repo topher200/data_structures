@@ -14,7 +14,7 @@ class HashTable():
       if element.key == key:
         return element
 
-  def output(self):
+  def pprint(self):
     for i, bucket in enumerate(self.table):
       print '{0}:'.format(i),
       for element in bucket:

@@ -23,8 +23,8 @@ def main():
     h.add(random_element())
   h.add(Element('topher', 1337))
 
-  # Print it the table
-  print(h.output())
+  # Print the table
+  print(h.pprint())
 
   # Try a find
   print(h.find('topher').output())
