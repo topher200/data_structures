@@ -23,11 +23,9 @@ class HashTable():
 
   @staticmethod
   def _hash_function(string):
-    # map/reduce?
-    sum = 0
-    for char in string:
-      sum += ord(char)
-    return sum % num_buckets
+    # Coverts each char of string to an ordinal number, then sums them and mods
+    # by the number of buckets
+    return sum(map(ord, string)) % num_buckets
 
 
 class Element():
