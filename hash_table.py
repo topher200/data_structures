@@ -1,3 +1,4 @@
+from __future__ import print_function
 num_buckets = 10
 
 class HashTable():
@@ -16,10 +17,10 @@ class HashTable():
 
   def pprint(self):
     for i, bucket in enumerate(self.table):
-      print '{0}:'.format(i),
+      print('{0}:'.format(i), end = '')
       for element in bucket:
-        print element.output(),
-      print 
+        print(element.output(), end = '')
+      print()
 
   @staticmethod
   def _hash_function(string):
