@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import random
 from hash_table import HashTable, Element
 

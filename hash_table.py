@@ -1,4 +1,5 @@
-from __future__ import print_function
+#!/usr/bin/python3
+
 num_buckets = 10
 
 class HashTable():
