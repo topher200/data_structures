@@ -24,7 +24,7 @@ def main():
   h.add(Element('topher', 1337))
 
   # Print the table
-  print(h.pprint())
+  h.print()
 
   # Try a find
   print(h.find('topher').output())
