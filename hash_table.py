@@ -18,7 +18,7 @@ class HashTable():
   def print(self):
     for i, bucket in enumerate(self.table):
       print('{0}:'.format(i), end = '')
-      map(lambda x: print(x.output(), end=''), bucket)
+      [print(element.output(), end='') for element in bucket]
       print()
 
   @staticmethod
