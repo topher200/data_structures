@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import random
+from element import Element
 from hash_table import HashTable, Element
 
 def generate_random_key():

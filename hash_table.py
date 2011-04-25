@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-num_buckets = 10
+from element import Element
+
+num_buckets = 100
 
 class HashTable():
   def __init__(self):
@@ -27,12 +29,3 @@ class HashTable():
     # Coverts each char of string to an ordinal number, then sums them and mods
     # by the number of buckets
     return sum(map(ord, string)) % num_buckets
-
-
-class Element():
-  def __init__(self, key, value):
-    self.key = key
-    self.value = value
-
-  def output(self):
-    return('[{0} {1}]'.format(self.key, self.value))
