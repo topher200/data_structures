@@ -2,7 +2,8 @@
 
 import random
 from element import Element
-from hash_table import HashTable, Element
+from hash_table import HashTable
+import tree
 
 def generate_random_key():
   length = random.randint(1, 10)
@@ -17,7 +18,7 @@ def generate_random_value():
 def random_element():
   return Element(generate_random_key(), generate_random_value())
 
-def main():
+def hash_table_test():
   # Create hash table
   h = HashTable()
 
@@ -31,6 +32,18 @@ def main():
 
   # Try a find
   print(h.find('topher').output())
+
+def tree_test():
+  root = tree.Leaf(Element('topher', 1337))
+
+  [tree.add(root, random_element()) for _ in range(10)]
+  tree.add(root, Element('asdf', 239))
+
+  tree.my_print(root)
+  
+
+def main():
+  tree_test()
 
 if __name__ == '__main__':
   main()
