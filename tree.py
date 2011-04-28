@@ -12,8 +12,8 @@ class Tree():
     else:
       Tree._recursive_add(self.root, element)
 
-  # pprint stands for pretty print- outputs root and all children
-  def pprint(self):
+  # outputs root and all children
+  def print(self):
     self._recursive_print(self.root)
     
   @staticmethod

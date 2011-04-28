@@ -42,7 +42,7 @@ def tree_test():
   my_tree.add(Element('topher', 1349))
 
   # Print it
-  my_tree.pprint()
+  my_tree.print()
 
 def main():
   tree_test()
