@@ -34,9 +34,14 @@ def hash_table_test():
   print(h.find('topher').output())
 
 def tree_test():
+  # Create a tree
   my_tree = tree.Tree()
+
+  # Populate it
   [my_tree.add(random_element()) for _ in range(10)]
   my_tree.add(Element('topher', 1349))
+
+  # Print it
   my_tree.pprint()
 
 def main():
