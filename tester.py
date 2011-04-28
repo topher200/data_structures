@@ -4,6 +4,7 @@ import random
 from element import Element
 from hash_table import HashTable
 import tree
+import timeit
 
 def generate_random_key():
   length = random.randint(1, 10)
@@ -41,11 +42,13 @@ def tree_test():
   [my_tree.add(random_element()) for _ in range(10)]
   my_tree.add(Element('topher', 1349))
 
-  # Print it
-  my_tree.print()
+def tree_timeit():
+  t = timeit.Timer("tree_test()", "from tester import tree_test")
+  print(t.timeit(number=1000))
+  
 
 def main():
-  tree_test()
+  tree_timeit()
 
 if __name__ == '__main__':
   main()
