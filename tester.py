@@ -34,13 +34,10 @@ def hash_table_test():
   print(h.find('topher').output())
 
 def tree_test():
-  root = tree.Leaf(Element('topher', 1337))
-
-  [tree.add(root, random_element()) for _ in range(10)]
-  tree.add(root, Element('asdf', 239))
-
-  tree.my_print(root)
-  
+  my_tree = tree.Tree()
+  [my_tree.add(random_element()) for _ in range(10)]
+  my_tree.add(Element('topher', 1349))
+  my_tree.pprint()
 
 def main():
   tree_test()

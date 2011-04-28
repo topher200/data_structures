@@ -2,32 +2,44 @@
 
 from element import Element
 
-def add(root, element):
-  if (root == None):
-    return element
+class Tree():
+  def __init__(self):
+    self.root = None
 
-  if (element.key <= root.element.key):
-    if (root.left_child == None):
-      root.left_child = Leaf(element)
+  def add(self, element):
+    if self.root == None:
+      self.root = Leaf(element)
     else:
-      add(root.left_child, element)
-  else:
-    if (root.right_child == None):
-      root.right_child = Leaf(element)
+      Tree._recursive_add(self.root, element)
+
+  def pprint(self):
+    self._recursive_print(self.root)
+    
+  @staticmethod
+  def _recursive_add(parent, element):
+    if (element.key <= parent.element.key):
+      if (parent.left_child == None):
+        parent.left_child = Leaf(element)
+      else:
+        Tree._recursive_add(parent.left_child, element)
     else:
-      add(root.right_child, element)
+      if (parent.right_child == None):
+        parent.right_child = Leaf(element)
+      else:
+        Tree._recursive_add(parent.right_child, element)
 
-def my_print(root):
-  if (root == None):
-    print()
-    return(None)
-  print('L:', end='')
-  my_print(root.left_child)
-  print('M:{0}'.format(root.element.output()))
-  print('R:', end='')
-  my_print(root.right_child)
+  @staticmethod
+  def _recursive_print(parent):
+    if (parent == None):
+      print()
+      return(None)
+    print('L:', end='')
+    Tree._recursive_print(parent.left_child)
+    print('M:{0}'.format(parent.element.output()))
+    print('R:', end='')
+    Tree._recursive_print(parent.right_child)
 
-        
+
 class Leaf():
   def __init__(self, element):
     self.element = element
