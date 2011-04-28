@@ -18,6 +18,7 @@ class HashTable():
       if element.key == key:
         return element
 
+  # outputs all buckets with all elements
   def print(self):
     for i, bucket in enumerate(self.table):
       print('{0}:'.format(i), end = '')
