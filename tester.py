@@ -44,7 +44,7 @@ def tree_test():
 
 def tree_timeit():
   t = timeit.Timer("tree_test()", "from tester import tree_test")
-  print(t.timeit(number=1000))
+  print(min(t.repeat(number=1000,repeat=3)))
   
 
 def main():
