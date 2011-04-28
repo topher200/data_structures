@@ -7,10 +7,7 @@ class Tree():
     self.root = None
 
   def add(self, element):
-    if self.root == None:
-      self.root = Leaf(element)
-    else:
-      Tree._recursive_add(self.root, element)
+    self.root = Tree._recursive_add(self.root, element)
 
   # outputs root and all children
   def print(self):
@@ -18,16 +15,14 @@ class Tree():
     
   @staticmethod
   def _recursive_add(parent, element):
+    if parent == None:
+      return Leaf(element)
+
     if (element.key <= parent.element.key):
-      if (parent.left_child == None):
-        parent.left_child = Leaf(element)
-      else:
-        Tree._recursive_add(parent.left_child, element)
+      parent.left_child = Tree._recursive_add(parent.left_child, element)
     else:
-      if (parent.right_child == None):
-        parent.right_child = Leaf(element)
-      else:
-        Tree._recursive_add(parent.right_child, element)
+      parent.right_child = Tree._recursive_add(parent.right_child, element)
+    return parent
 
   @staticmethod
   def _recursive_print(parent):
