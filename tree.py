@@ -9,6 +9,9 @@ class Tree():
   def add(self, element):
     self.root = Tree._recursive_add(self.root, element)
 
+  def find(self, key):
+    return Tree._recursive_find(self.root, key)
+
   # outputs root and all children
   def print(self):
     self._recursive_print(self.root)
@@ -23,6 +26,23 @@ class Tree():
     else:
       parent.right_child = Tree._recursive_add(parent.right_child, element)
     return parent
+
+  @staticmethod
+  def _recursive_find(parent, key):
+    # Check the current element (parent)
+    if (parent == None):
+      return None
+    if (parent.element.key == key):
+      return parent.element
+
+    # Recursively try the children
+    left_element = Tree._recursive_find(parent.left_child, key)
+    if (left_element != None):
+      return left_element
+    right_element = Tree._recursive_find(parent.right_child, key)
+    if (right_element != None):
+      return right_element
+
 
   @staticmethod
   def _recursive_print(parent):

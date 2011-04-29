@@ -42,13 +42,16 @@ def tree_test():
   [my_tree.add(random_element()) for _ in range(1000)]
   my_tree.add(Element('topher', 1349))
 
+  # try a find
+  print(my_tree.find('topher').output())
+
 def tree_timeit():
   t = timeit.Timer("tree_test()", "from tester import tree_test")
   print(min(t.repeat(number=10,repeat=3)))
   
 
 def main():
-  tree_timeit()
+  tree_test()
 
 if __name__ == '__main__':
   main()
