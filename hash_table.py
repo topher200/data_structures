@@ -27,6 +27,6 @@ class HashTable():
 
   @staticmethod
   def _hash_function(string):
-    # Coverts each char of string to an ordinal number, then sums them and mods
-    # by the number of buckets
+    # Covert each char of string to an ordinal number and sum them. Mod this
+    # by the number of buckets.
     return sum(map(ord, string)) % num_buckets
